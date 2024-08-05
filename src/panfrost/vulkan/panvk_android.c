@@ -9,6 +9,7 @@
 #include <hardware/hardware.h>
 #include <hardware/hwvulkan.h>
 #include <vulkan/vk_icd.h>
+#include "panvk_instance.c"
 #include <stdlib.h>
 
 #include "util/log.h"
