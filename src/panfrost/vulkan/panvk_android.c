@@ -10,6 +10,7 @@
 #include <hardware/hwvulkan.h>
 #include <vulkan/vk_icd.h>
 #include <stdlib.h>
+#include <vulkan/vulkan_core.h>
 
 #include "util/log.h"
 
