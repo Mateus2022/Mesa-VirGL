@@ -9,7 +9,6 @@
 #include <hardware/hardware.h>
 #include <hardware/hwvulkan.h>
 #include <vulkan/vk_icd.h>
-#include "panvk_instance.c"
 #include <stdlib.h>
 
 #include "util/log.h"
@@ -56,9 +55,9 @@ panvk_hal_open(const struct hw_module_t *mod, const char *id,
             .close = panvk_hal_close,
          },
       .EnumerateInstanceExtensionProperties =
-         panvk_EnumerateInstanceExtensionProperties,
-      .CreateInstance = panvk_CreateInstance,
-      .GetInstanceProcAddr = panvk_GetInstanceProcAddr,
+         vkEnumerateInstanceExtensionProperties, // Alterado para vk_
+      .CreateInstance = vkCreateInstance,       // Alterado para vk_
+      .GetInstanceProcAddr = vkGetInstanceProcAddr, // Alterado para vk_
    };
 
    mesa_logi("panvk: Warning: Android Vulkan implementation is experimental");
